@@ -1,0 +1,121 @@
++--------+----------+-----------------------------------------+-----------------------------------+---------------------------------------------------------------------------+------------+
+| Domain | Method   | URI                                     | Name                              | Action                                                                    | Middleware |
++--------+----------+-----------------------------------------+-----------------------------------+---------------------------------------------------------------------------+------------+
+|        | GET|HEAD | /                                       |                                   | Closure                                                                   | web        |
+|        | POST     | api/blog/categories                     |                                   | App\Http\Controllers\Api\Blog\BlogCategoriesController@store              | api        |
+|        | DELETE   | api/blog/categories/{id}                |                                   | App\Http\Controllers\Api\Blog\BlogCategoriesController@destroy            | api        |
+|        | PUT      | api/blog/categories/{id}                |                                   | App\Http\Controllers\Api\Blog\BlogCategoriesController@update             | api        |
+|        | GET|HEAD | api/blog/categories/{id}                |                                   | App\Http\Controllers\Api\Blog\BlogCategoriesController@show               | api        |
+|        | POST     | api/comments                            |                                   | App\Http\Controllers\Api\CommentsController@store                         | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | GET|HEAD | api/comments                            |                                   | App\Http\Controllers\Api\CommentsController@index                         | api        |
+|        | DELETE   | api/comments/{id}                       |                                   | App\Http\Controllers\Api\CommentsController@destroy                       | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | PUT      | api/comments/{id}                       |                                   | App\Http\Controllers\Api\CommentsController@update                        | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | GET|HEAD | api/comments/{id}                       |                                   | App\Http\Controllers\Api\CommentsController@show                          | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | GET|HEAD | api/images                              |                                   | App\Http\Controllers\Api\ImagesController@index                           | api        |
+|        | POST     | api/images                              |                                   | App\Http\Controllers\Api\ImagesController@store                           | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | DELETE   | api/images/{id}                         |                                   | App\Http\Controllers\Api\ImagesController@destroy                         | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | GET|HEAD | api/images/{id}                         |                                   | App\Http\Controllers\Api\ImagesController@show                            | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | PUT      | api/images/{id}                         |                                   | App\Http\Controllers\Api\ImagesController@update                          | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | GET|HEAD | api/marks                               |                                   | App\Http\Controllers\Api\MarksController@index                            | api        |
+|        | POST     | api/marks                               |                                   | App\Http\Controllers\Api\MarksController@store                            | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | PUT      | api/marks/{id}                          |                                   | App\Http\Controllers\Api\MarksController@update                           | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | GET|HEAD | api/marks/{id}                          |                                   | App\Http\Controllers\Api\MarksController@show                             | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | DELETE   | api/marks/{id}                          |                                   | App\Http\Controllers\Api\MarksController@destroy                          | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | GET|HEAD | api/pages                               |                                   | App\Http\Controllers\Api\PagesController@index                            | api        |
+|        | POST     | api/pages                               |                                   | App\Http\Controllers\Api\PagesController@store                            | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | GET|HEAD | api/pages/{id}                          |                                   | App\Http\Controllers\Api\PagesController@show                             | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | PUT      | api/pages/{id}                          |                                   | App\Http\Controllers\Api\PagesController@update                           | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | DELETE   | api/pages/{id}                          |                                   | App\Http\Controllers\Api\PagesController@destroy                          | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | GET|HEAD | api/profile/purchases                   |                                   | App\Http\Controllers\Api\School\SchoolPurchasesController@index           | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | POST     | api/school/courses                      |                                   | App\Http\Controllers\Api\School\SchoolCoursesController@store             | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | GET|HEAD | api/school/courses                      |                                   | App\Http\Controllers\Api\School\SchoolCoursesController@index             | api        |
+|        | GET|HEAD | api/school/courses/{id}                 |                                   | App\Http\Controllers\Api\School\SchoolCoursesController@show              | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | PUT      | api/school/courses/{id}                 |                                   | App\Http\Controllers\Api\School\SchoolCoursesController@update            | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | DELETE   | api/school/courses/{id}                 |                                   | App\Http\Controllers\Api\School\SchoolCoursesController@destroy           | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | POST     | api/school/homework                     |                                   | App\Http\Controllers\Api\School\SchoolHomeworkController@store            | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | GET|HEAD | api/school/homework                     |                                   | App\Http\Controllers\Api\School\SchoolHomeworkController@index            | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | PUT      | api/school/homework/{id}                |                                   | App\Http\Controllers\Api\School\SchoolHomeworkController@update           | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | DELETE   | api/school/homework/{id}                |                                   | App\Http\Controllers\Api\School\SchoolHomeworkController@destroy          | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | GET|HEAD | api/school/homework/{id}                |                                   | App\Http\Controllers\Api\School\SchoolHomeworkController@show             | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | POST     | api/school/lessons                      |                                   | App\Http\Controllers\Api\School\SchoolLessonsController@store             | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | GET|HEAD | api/school/lessons                      |                                   | App\Http\Controllers\Api\School\SchoolLessonsController@index             | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | DELETE   | api/school/lessons/{id}                 |                                   | App\Http\Controllers\Api\School\SchoolLessonsController@destroy           | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | PUT      | api/school/lessons/{id}                 |                                   | App\Http\Controllers\Api\School\SchoolLessonsController@update            | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | GET|HEAD | api/school/lessons/{id}                 |                                   | App\Http\Controllers\Api\School\SchoolLessonsController@show              | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | GET|HEAD | api/school/sections                     |                                   | App\Http\Controllers\Api\School\SchoolSectionsController@index            | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | POST     | api/school/sections                     |                                   | App\Http\Controllers\Api\School\SchoolSectionsController@store            | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | GET|HEAD | api/school/sections/{id}                |                                   | App\Http\Controllers\Api\School\SchoolSectionsController@show             | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | PUT      | api/school/sections/{id}                |                                   | App\Http\Controllers\Api\School\SchoolSectionsController@update           | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | DELETE   | api/school/sections/{id}                |                                   | App\Http\Controllers\Api\School\SchoolSectionsController@destroy          | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | PUT      | api/user                                |                                   | App\Http\Controllers\Api\ProfileController@update                         | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | DELETE   | api/user                                |                                   | App\Http\Controllers\Api\ProfileController@destroy                        | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | GET|HEAD | api/user                                |                                   | App\Http\Controllers\Api\ProfileController@show                           | api        |
+|        |          |                                         |                                   |                                                                           | auth:api   |
+|        | GET|HEAD | oauth/authorize                         | passport.authorizations.authorize | Laravel\Passport\Http\Controllers\AuthorizationController@authorize       | web        |
+|        |          |                                         |                                   |                                                                           | auth       |
+|        | POST     | oauth/authorize                         | passport.authorizations.approve   | Laravel\Passport\Http\Controllers\ApproveAuthorizationController@approve  | web        |
+|        |          |                                         |                                   |                                                                           | auth       |
+|        | DELETE   | oauth/authorize                         | passport.authorizations.deny      | Laravel\Passport\Http\Controllers\DenyAuthorizationController@deny        | web        |
+|        |          |                                         |                                   |                                                                           | auth       |
+|        | GET|HEAD | oauth/clients                           | passport.clients.index            | Laravel\Passport\Http\Controllers\ClientController@forUser                | web        |
+|        |          |                                         |                                   |                                                                           | auth       |
+|        | POST     | oauth/clients                           | passport.clients.store            | Laravel\Passport\Http\Controllers\ClientController@store                  | web        |
+|        |          |                                         |                                   |                                                                           | auth       |
+|        | PUT      | oauth/clients/{client_id}               | passport.clients.update           | Laravel\Passport\Http\Controllers\ClientController@update                 | web        |
+|        |          |                                         |                                   |                                                                           | auth       |
+|        | DELETE   | oauth/clients/{client_id}               | passport.clients.destroy          | Laravel\Passport\Http\Controllers\ClientController@destroy                | web        |
+|        |          |                                         |                                   |                                                                           | auth       |
+|        | GET|HEAD | oauth/personal-access-tokens            | passport.personal.tokens.index    | Laravel\Passport\Http\Controllers\PersonalAccessTokenController@forUser   | web        |
+|        |          |                                         |                                   |                                                                           | auth       |
+|        | POST     | oauth/personal-access-tokens            | passport.personal.tokens.store    | Laravel\Passport\Http\Controllers\PersonalAccessTokenController@store     | web        |
+|        |          |                                         |                                   |                                                                           | auth       |
+|        | DELETE   | oauth/personal-access-tokens/{token_id} | passport.personal.tokens.destroy  | Laravel\Passport\Http\Controllers\PersonalAccessTokenController@destroy   | web        |
+|        |          |                                         |                                   |                                                                           | auth       |
+|        | GET|HEAD | oauth/scopes                            | passport.scopes.index             | Laravel\Passport\Http\Controllers\ScopeController@all                     | web        |
+|        |          |                                         |                                   |                                                                           | auth       |
+|        | POST     | oauth/token                             | passport.token                    | Laravel\Passport\Http\Controllers\AccessTokenController@issueToken        | throttle   |
+|        | POST     | oauth/token/refresh                     | passport.token.refresh            | Laravel\Passport\Http\Controllers\TransientTokenController@refresh        | web        |
+|        |          |                                         |                                   |                                                                           | auth       |
+|        | GET|HEAD | oauth/tokens                            | passport.tokens.index             | Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController@forUser | web        |
+|        |          |                                         |                                   |                                                                           | auth       |
+|        | DELETE   | oauth/tokens/{token_id}                 | passport.tokens.destroy           | Laravel\Passport\Http\Controllers\AuthorizedAccessTokenController@destroy | web        |
+|        |          |                                         |                                   |                                                                           | auth       |
++--------+----------+-----------------------------------------+-----------------------------------+---------------------------------------------------------------------------+------------+
